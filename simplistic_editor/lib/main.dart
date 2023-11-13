@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neo4driver/neo4driver.dart';
 
 import 'app_state.dart';
 import 'app_state_manager.dart';
@@ -8,6 +9,14 @@ import 'replacements.dart';
 import 'text_editing_delta_history_view.dart';
 
 void main() {
+  NeoClient.withAuthorization(
+    username: 'neo4j',
+    password:
+        'm-KHf6qndzxpwanLgXA3dUR1DPJazenN3O5tiDKsXLQ', // TODO don't put passwords in src
+    databaseAddress: 'http://7d95b7e2.databases.neo4j.io:7474/',
+    databaseName: 'Instance01',
+  );
+
   runApp(const MyApp());
 }
 
